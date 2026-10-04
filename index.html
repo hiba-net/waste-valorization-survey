@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استبيان تثمين النفايات 🌱</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #333333;
+      --text-muted: #666666;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 20px; direction: rtl; }
+    .container { max-width: 750px; margin: 0 auto; }
+    .card { background: var(--card); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    h1 { color: var(--primary); text-align: center; margin-bottom: 10px; font-size: 1.6rem; }
+    .subtitle { text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+    .form-group { margin-bottom: 20px; }
+    .question-title { font-weight: 700; font-size: 1.05rem; color: #1a237e; margin-bottom: 4px; display: block; }
+    .question-hint { font-size: 0.85rem; color: #0288d1; background: #e1f5fe; padding: 6px 10px; border-radius: 6px; margin-bottom: 10px; display: block; }
+    input[type="text"], input[type="number"], textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; outline: none; }
+    .options-grid { display: flex; flex-direction: column; gap: 8px; }
+    .option-label { display: flex; align-items: center; padding: 10px 12px; border: 1px solid #eee; border-radius: 8px; cursor: pointer; background: #fafafa; }
+    .option-label:hover { background: #e8f5e9; }
+    .option-label input { margin-left: 10px; width: 18px; height: 18px; accent-color: var(--primary); }
+    .btn { background: var(--primary); color: white; border: none; padding: 14px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; }
+    .btn:hover { background: #1b5e20; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <h1>استبيان حول تثمين النفايات 🌱🌍</h1>
+      <p class="subtitle">شاركونا إجاباتكم لمساعدتنا في مشروعنا البيئي. (يمكنكم اختيار أكثر من خيار في الأسئلة المُشار إليها)</p>
+
+      <!-- ⚠️ ضعي رابط Formspree الخاص بكِ في السطر التالي بدلاً من الرابط المكتوب ⚠️ -->
+      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+
+        <!-- معلومات عامة -->
+        <div class="form-group">
+          <label class="question-title">👤 الاسم واللقب:</label>
+          <span class="question-hint">💡 اكتب اسمك الكامل لتمكيننا من إحصاء المشاركين.</span>
+          <input type="text" name="fullName" required placeholder="أدخل اسمك الكامل">
+        </div>
+
+        <div class="form-group">
+          <label class="question-title">🎂 العمر:</label>
+          <span class="question-hint">💡 يساعدنا تحديد العمر في معرفة الفئات الأكثر تفاعلاً.</span>
+          <input type="number" name="age" required placeholder="أدخل عمرك">
+        </div>
+
+        <!-- س1 -->
+        <div class="form-group">
+          <label class="question-title">1️⃣ عندما تنتهي من استعمال قنينة بلاستيكية، ماذا تفعل بها؟</label>
+          <span class="question-hint">💡 اختر كل التصرفات التي تقوم بها عادةً (يمكن اختيار أكثر من خيار).</span>
+          <div class="options-grid">
+            <label class="option-label"><input type="checkbox" name="q1[]" value="أرميها في سلة النفايات"> أرميها في سلة النفايات 🗑️</label>
+            <label class="option-label"><input type="checkbox" name="q1[]" value="أضعها في حاوية التدوير"> أضعها في حاوية مخصصة للتدوير ♻️</label>
+            <label class="option-label"><input type="checkbox" name="q1[]" value="أعيد استعمالها"> أعيد استعمالها في المنزل 🔄</label>
+            <label class="option-label"><input type="checkbox" name="q1[]" value="لا أفكر في الأمر"> لا أفكر في الأمر 🤷</label>
+          </div>
+        </div>
+
+        <!-- س2 -->
+        <div class="form-group">
+          <label class="question-title">2️⃣ هل تقوم بفرز النفايات في المنزل؟</label>
+          <span class="question-hint">💡 المقصود بفرز النفايات هو فصل البلاستيك والورق عن بقايا الطعام.</span>
+          <div class="options-grid">
+            <label class="option-label"><input type="radio" name="q2" value="دائمًا" required> دائمًا</label>
+            <label class="option-label"><input type="radio" name="q2" value="أحيانًا"> أحيانًا</label>
+            <label class="option-label"><input type="radio" name="q2" value="نادرًا"> نادرًا</label>
+            <label class="option-label"><input type="radio" name="q2" value="أبدًا"> أبدًا</label>
+          </div>
+        </div>
+
+        <!-- س3 -->
+        <div class="form-group">
+          <label class="question-title">3️⃣ أيّ نوع من النفايات هو الأكثر انتشارًا في رأيك؟</label>
+          <span class="question-hint">💡 حدد الأنواع التي تلاحظ وجودها بكثرة في محيطك (يمكن اختيار أكثر من خيار).</span>
+          <div class="options-grid">
+            <label class="option-label"><input type="checkbox" name="q3[]" value="البلاستيك"> البلاستيك 🧴</label>
+            <label class="option-label"><input type="checkbox" name="q3[]" value="الورق والكرتون"> الورق والكرتون 📄</label>
+            <label class="option-label"><input type="checkbox" name="q3[]" value="النفايات العضوية"> النفايات العضوية (أطعمة) 🍎</label>
+            <label class="option-label"><input type="checkbox" name="q3[]" value="المعادن والمعلبات"> المعادن والمعلبات 🥫</label>
+          </div>
+        </div>
+
+        <!-- س4 -->
+        <div class="form-group">
+          <label class="question-title">4️⃣ ما السبب الذي يمنع الناس من تثمين النفايات؟</label>
+          <span class="question-hint">💡 يمكنك اختيار عدة أسباب ترين أنها تعيق عملية الفرز وإعادة التدوير.</span>
+          <div class="options-grid">
+            <label class="option-label"><input type="checkbox" name="q4_reasons[]" value="نقص الوعي"> نقص الوعي بأهمية التدوير 📢</label>
+            <label class="option-label"><input type="checkbox" name="q4_reasons[]" value="غياب الحاوية المخصصة"> غياب حاويات الفرز قرب المنازل 🗑️</label>
+            <label class="option-label"><input type="checkbox" name="q4_reasons[]" value="الكسل وعدم الاهتمام"> الكسل أو عدم الاهتمام</label>
+            <label class="option-label"><input type="checkbox" name="q4_reasons[]" value="عدم معرفة الطرق الصحيحة"> عدم معرفة كيفية القيام بذلك</label>
+          </div>
+        </div>
+
+        <!-- س5 -->
+        <div class="form-group">
+          <label class="question-title">5️⃣ 💭 اقتراحات وملاحظات حرة:</label>
+          <span class="question-hint">💡 شاركونا فكرة أو حل عملي ترونه مناسباً للحفاظ على البيئة.</span>
+          <textarea name="suggestions" rows="4" placeholder="اكتب اقتراحك هنا..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">إرسال الإجابات 🚀</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
